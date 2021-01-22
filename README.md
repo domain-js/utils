@@ -12,6 +12,7 @@
 | ---- | ---- | ---- | ------ | ---- | ---- |
 | errorLogPath | string | `是` | `无` | 错误日志记录的路径 | ./storage/logs |
 | infoLogPath | string | `是` | `无` | 常规日志记录的路径 | ./storage/logs |
+
 [更多直接参考 @open-node/logger](https://github.com/open-node/logger);
 
 # deps
@@ -24,4 +25,5 @@
 | error | 记录错误日志 | logger.error(Error('has some error')) |
 | info | 记录常规日志 | logger.info('info')) |
 | logger | 自动包装一个函数，记录其执行 log | logger.logger(fn, 'Test fn', true)) |
+
 [更多直接参考 @open-node/logger](https://github.com/open-node/logger);

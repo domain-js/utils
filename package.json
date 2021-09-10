@@ -5,13 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "export NODE_ENV=test && jest ./__test__ --coverage",
-    "test:watch": "export NODE_ENV=test && jest ./__test__ --watch"
+    "test:watch": "export NODE_ENV=test && jest ./__test__ --watch",
+    "release": "npm run test && npm run build && npm publish --registry=https://registry.npmjs.org --access=public"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/domain-js/logger/.git"
   },
-  "keywords": ["logger", "domain.js"],
+  "keywords": [
+    "logger",
+    "domain.js"
+  ],
   "author": "Redstone Zhao",
   "license": "MIT",
   "bugs": {
@@ -19,6 +23,15 @@
   },
   "homepage": "https://github.com/domain-js/logger#readme",
   "devDependencies": {
-    "jest": "^24.9.0"
+    "@types/lodash": "^4.14.172",
+    "@types/node": "^16.9.1",
+    "@types/uuid": "^8.3.1",
+    "@types/jest": "^27.0.1",
+    "lodash": "^4.17.21",
+    "jest": "^27.1.0",
+    "ts-jest": "^27.0.5"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
   }
 }

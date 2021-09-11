@@ -67,7 +67,7 @@ describe("Logger module", () => {
     expect((fs.appendFileSync as jest.Mock).mock.calls.length).toBe(5);
     const [file, line] = (fs.appendFileSync as jest.Mock).mock.calls[4];
     expect(file.slice(0, errorLogPath.length)).toBe(errorLogPath);
-    expect(file).toMatch("errorcode");
+    expect(file).toMatch("errorCode");
     expect(line).not.toMatch("world");
   });
 
@@ -88,7 +88,7 @@ describe("Logger module", () => {
 
   it("logger sync method, fn exec faild", () => {
     const logger = Main({ clientId, infoLogPath, errorLogPath }, { _ });
-    const calls = [];
+    const calls: any[] = [];
     const fn = (...args: any[]) => {
       calls.push(args);
       throw Error("wrong");
@@ -104,7 +104,7 @@ describe("Logger module", () => {
 
   it("logger async method, fn exec success", async () => {
     const logger = Main({ clientId, infoLogPath, errorLogPath }, { _ });
-    const calls = [];
+    const calls: any[] = [];
     const ret = "I am function return value";
     const fn = async (...args: any[]) => {
       calls.push(args);
@@ -126,7 +126,7 @@ describe("Logger module", () => {
 
   it("logger async method, fn exec faild", async () => {
     const logger = Main({ clientId, infoLogPath, errorLogPath }, { _ });
-    const calls = [];
+    const calls: any[] = [];
     const fn = async (...args: any[]) => {
       calls.push(args);
       return new Promise((resolve, reject) => {

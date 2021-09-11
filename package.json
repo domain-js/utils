@@ -2,7 +2,7 @@
   "name": "@domain.js/logger",
   "version": "0.5.0",
   "description": "domain.js logger 通用模块",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "export NODE_ENV=test && jest ./__test__ --coverage",

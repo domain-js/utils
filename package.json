@@ -1,6 +1,6 @@
 {
   "name": "@domain.js/logger",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "domain.js logger 通用模块",
   "main": "dist/index.js",
   "scripts": {

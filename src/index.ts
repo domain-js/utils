@@ -7,10 +7,12 @@ import { v4 as uuid } from "uuid";
 const date = (offset = 0) => new Date(Date.now() + (offset | 0)).toISOString();
 
 interface Cnf {
-  clientId: string;
-  errorLogPath: string;
-  infoLogPath: string;
-  ignoreErrors?: [string | number];
+  logger: {
+    clientId: string;
+    errorLogPath: string;
+    infoLogPath: string;
+    ignoreErrors?: [string | number];
+  };
 }
 
 interface Deps {
@@ -23,7 +25,9 @@ interface Err extends Error {
 }
 
 export function Main(cnf: Cnf, deps: Deps) {
-  const { errorLogPath, infoLogPath, ignoreErrors, clientId } = cnf;
+  const {
+    logger: { errorLogPath, infoLogPath, ignoreErrors, clientId },
+  } = cnf;
   const { _ } = deps;
   const makeDir = _.memoize((dir) => {
     if (!fs.existsSync(dir)) fs.mkdirSync(dir);

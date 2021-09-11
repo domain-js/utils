@@ -18,3 +18,4 @@ coverage/*
 __test__
 docs/*
 test.js
+src/*

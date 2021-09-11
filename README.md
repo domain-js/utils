@@ -1,6 +1,6 @@
 # @domain.js/logger
 
-[![Build status](https://travis-ci.com/domain-js/logger.svg?branch=master)](https://travis-ci.org/domain-js/logger)
+[![Build status](https://travis-ci.com/domain-js/logger.svg?branch=master)](https://travis-ci.com/domain-js/logger)
 [![codecov](https://codecov.io/gh/domain-js/logger/branch/master/graph/badge.svg)](https://codecov.io/gh/domain-js/logger)
 
 # Installation

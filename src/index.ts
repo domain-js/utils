@@ -64,7 +64,7 @@ export function Main(cnf: Cnf, deps: Deps) {
     const today = time.split("T")[0];
     const dir = path.resolve(infoLogPath, today);
     makeDir(dir);
-    const file = path.resolve(dir, `${info}.log`);
+    const file = path.resolve(dir, "info.log");
     const content = [time, clientId, message];
     if (extra != null) content.push(JSON.stringify(extra));
     try {

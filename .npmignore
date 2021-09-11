@@ -19,3 +19,6 @@ __test__
 docs/*
 test.js
 src/*
+tsconfig.json
+jest.config.js
+README.md

@@ -33,9 +33,9 @@ describe("@domain.js/utils", () => {
     });
 
     it("case4", () => {
-      const date = new Date(1000000000);
-      const str = utils.md5(date);
-      expect(str).toBe("8291589d705fef16ca64ef1cfc61e8b7");
+      const obj = { toString() { return 'hello'} };
+      const str = utils.md5(obj);
+      expect(str).toBe("5d41402abc4b2a76b9719d911017c592");
     });
   });
 

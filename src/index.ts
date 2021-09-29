@@ -49,14 +49,16 @@ export const lcfirst = (value: string) => value[0].toLowerCase() + value.substri
 export const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /** 深度冻结一个对象，防止被不小心篡改 */
-export const deepFreeze = (object: any) => {
+export const deepFreeze = <T>(object: T) => {
   // Retrieve the property names defined on object
   const propNames = Object.getOwnPropertyNames(object);
 
   for (const name of propNames) {
-    const value = object[name];
+    const value = (object as any)[name];
 
-    object[name] = value && typeof value === "object" ? deepFreeze(value) : value;
+    if (value && typeof value === "object") {
+      deepFreeze(value);
+    }
   }
 
   return Object.freeze(object);

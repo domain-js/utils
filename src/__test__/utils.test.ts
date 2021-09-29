@@ -149,7 +149,7 @@ describe("@domain.js/utils", () => {
     it("case1", () => {
       const obj = utils.deepFreeze({ name: "redstone" });
       expect(() => {
-        obj.name = "stonephp";
+        (obj as any).name = "stonephp";
       }).toThrow();
       expect(obj).toEqual({ name: "redstone" });
     });
@@ -160,6 +160,8 @@ describe("@domain.js/utils", () => {
         obj.person.name = "stonephp";
       }).toThrow();
       expect(obj).toEqual({ person: { name: "redstone" } });
+
+      console.log(obj.person.name);
     });
   });
 });

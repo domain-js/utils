@@ -13,7 +13,12 @@ export const md5 = (str: { toString: () => string }) => {
   return hash.update(str.toString()).digest().toString("hex");
 };
 
-/* 生成随机字符串 */
+/**
+ 生成随机字符串,
+ @type: "strong" 强壮型 包括特殊字符
+ @type: "normal" 普通型 不包括特殊字符
+ @type: string 随机串字典手动指定
+*/
 export function randStr(len: number, type: "strong"): string;
 export function randStr(len: number, type: "normal"): string;
 export function randStr(len: number, type: string): string;
